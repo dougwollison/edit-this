@@ -36,6 +36,21 @@ final class AJAX extends Handler {
 			return;
 		}
 
-		// to be written
+		self::add_action( 'wp_ajax_editthis_toggle', 'toggle_default' );
+	}
+
+	// =========================
+	// ! Option Handling
+	// =========================
+
+	/**
+	 * Toggle the user's default visibility option for the Edit This buttons.
+	 *
+	 * @since 1.0.0
+	 */
+	public static function toggle_default() {
+		update_user_meta( get_current_user_id(), 'editthis_default_visibility', $_REQUEST['default'] );
+		echo 1;
+		exit;
 	}
 }
