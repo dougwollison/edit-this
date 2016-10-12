@@ -58,7 +58,11 @@ function cheatin() {
  * @internal
  *
  * @since 1.0.0
+ *
+ * @param string $default Optional The default value to return if none is set.
+ *
+ * @return string The default visibility option retrieved.
  */
-function get_default_visibility() {
-	return get_user_meta( get_current_user_id(), 'editthis_default_visibility', true );
+function get_default_visibility( $default = 'visible' ) {
+	return get_user_meta( get_current_user_id(), 'editthis_default_visibility', true ) ?: $default;
 }
