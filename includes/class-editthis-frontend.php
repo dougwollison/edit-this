@@ -71,6 +71,11 @@ final class Frontend extends Handler {
 	 * @since 1.0.0
 	 */
 	public static function enqueue_assets(){
+		// Abort if no admin bar is showing
+		if ( ! is_admin_bar_showing() ) {
+			return;
+		}
+
 		// Admin styling
 		wp_enqueue_style( 'editthis', plugins_url( 'css/public.css', EDITTHIS_PLUGIN_FILE ), '1.0.0', 'screen' );
 
@@ -97,6 +102,11 @@ final class Frontend extends Handler {
 	 * @return array The updated classes list.
 	 */
 	public static function add_visibility_class( $classes ) {
+		// Abort if no admin bar is showing
+		if ( ! is_admin_bar_showing() ) {
+			return;
+		}
+
 		$classes[] = 'editthis-' . get_default_visibility();
 
 		return $classes;
