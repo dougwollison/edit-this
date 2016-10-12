@@ -64,7 +64,7 @@ final class Uninstaller {
 	 * @since 2.3.0
 	 */
 	public static function uninstall() {
-		delete_option( 'editthis_options' );
+		delete_metadata( 'user', 0, 'editthis_default_visibility', null, 'delete_all' );
 	}
 }
 
