@@ -51,3 +51,14 @@ function is_backend() {
 function cheatin() {
 	wp_die( __( 'Cheatin&#8217; uh?' ), 403 );
 }
+
+/**
+ * Get the current user's default visibilty option.
+ *
+ * @internal
+ *
+ * @since 1.0.0
+ */
+function get_default_visibility() {
+	return get_user_meta( get_current_user_id(), 'editthis_default_visibility', true );
+}
