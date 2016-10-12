@@ -31,7 +31,7 @@
  *      @option string "cap"    The capability to check for.
  *      @option string "attr"   The attributes fo the link.
  */
-function get_edit_button( $options = null ) {
+function get_edit_this_button( $options = null ) {
 	$target = $text = $class = $cap = $attr = null;
 	$default_options = array(
 		'target' => null,
@@ -139,8 +139,8 @@ function get_edit_button( $options = null ) {
 /**
  * Print the edit button.
  *
- * @see the_edit_button() for details.
+ * @see get_edit_this_button() for details.
  */
-function the_edit_button( $options = null ) {
-	echo call_user_func_array( 'get_edit_button', func_get_args() );
+function the_edit_this_button( $options = null ) {
+	echo call_user_func_array( 'get_edit_this_button', func_get_args() );
 }
