@@ -84,6 +84,8 @@ final class Frontend extends Handler {
 
 		// Localize the javascript
 		wp_localize_script( 'editthis-js', 'editthisL10n', array(
+			'hide' => __( 'Hide Edit Buttons', 'editthis' ),
+			'show' => __( 'Show Edit Buttons', 'editthis' ),
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 		) );
 	}
