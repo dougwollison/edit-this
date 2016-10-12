@@ -37,10 +37,10 @@ final class Frontend extends Handler {
 		}
 
 		// Setup stuff
-		static::add_action( 'plugins_loaded', 'load_textdomain', 10, 0 );
+		self::add_action( 'plugins_loaded', 'load_textdomain', 10, 0 );
 
 		// Script/Style Enqueues
-		static::add_action( 'enqueue_scripts', 'enqueue_assets' );
+		self::add_action( 'enqueue_scripts', 'enqueue_assets' );
 	}
 
 	// =========================
